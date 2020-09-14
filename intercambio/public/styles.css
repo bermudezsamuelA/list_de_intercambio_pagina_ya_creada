@@ -1,0 +1,276 @@
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+
+	font-family: 'Lato', 'Roboto', 'Roboto Slab', serif, sans-serif;
+	font-size: 5vw;
+
+	font-weight: 400;
+	line-height: 1.6;
+
+	background-color: rgba(4, 29, 24,1);
+	
+	display: grid;
+	grid-template: [margen] 1rem [inicio] auto  [fin] 1px [margen2] 1fr
+				  /[margen] 2rem [inicio] auto  [fin] 1px [margen2] 1fr;
+	grid-gap: 1rem;
+
+	
+}
+
+div{
+	margin: 0;
+	padding-top: 0.2rem;
+	padding-left: 0.5rem;
+	padding-bottom: 0.7rem;
+	padding-right: 0.5rem;
+	height: 100%;
+	width: 95%;
+
+	font-size: 0.9rem;
+
+	background-image: linear-gradient(to bottom,
+						rgba(143, 244, 223,0.9),
+						rgba(86, 239, 207,0.8),	 
+						rgba(30,234,191,1), 
+						rgba(26, 205, 167, 0.7));
+	
+	border: 0.3rem solid rgba(26, 205, 167,1);
+	border-radius: 0.5rem;
+
+	box-shadow: ;
+
+
+	grid-row: inicio/fin;
+	grid-column: inicio/fin ;
+	place-self: stretch ;
+	
+	display: grid;
+	grid-template-areas: 
+	". header ."
+	"tabla tabla tabla"
+	"total total total"
+	". boton .";
+}	
+
+h2{
+	grid-area: header;
+	font-size: 3rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 0.2rem;
+	color: rgba(161, 86, 181, 1);
+}
+
+table{
+	padding: 0.5rem;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 0.7rem;
+	grid-area: tabla;
+	
+}
+
+caption{
+	font-size: 1.5rem;
+	color: rgba(108, 57, 121, 1);
+}
+
+th, td{
+	text-align: center;
+	vertical-align: middle;
+	border: none;
+
+}
+
+
+td{
+	color: rgba(81, 43, 91, 1.0);
+	width: 5%;
+	margin-top: 1rem;
+}
+
+td:hover{
+	font-weight: bold;
+	color: rgba(81, 43, 91, 1);
+
+}
+
+.titulos{
+	color: rgba(255, 255, 255, 1);
+ 	background-image: linear-gradient(to bottom,
+						rgba(96, 96, 96,0.5),
+						rgba(128, 128, 128,0.8),	 
+						rgba(159, 159, 159,0.9));
+ 	border-radius: 0.5rem;
+}
+
+.contenido{
+	height: 3rem;
+
+}
+.contenido:hover{
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 0.7rem;
+
+}
+
+.name{
+	font-size: 1rem;
+}
+
+
+input{
+	height: 1.2rem;
+	width: 35%;
+
+	border-radius: 0.5rem;
+
+	font-size: 1rem;
+
+}
+
+input:focus{
+	
+	height: 1.2rem;
+	width: 35%;
+	border: 0.25rem solid rgba(26, 205, 167, 0.8);
+	border-radius: 0.5rem;
+	outline: none;
+
+	font-size: 1rem;
+
+}
+
+
+.total{
+	margin: 0;
+	width: 100%;
+	height: 3rem;
+	padding-left: 0.5rem;
+
+	background-color: rgba(83, 218, 189, 0.4);
+	color: rgba(255, 255, 255, 1.0);
+
+	border: none;
+	border-radius: 0.6rem;
+
+	font-size: 1rem;
+	font-stretch: expanded;
+	font-weight: bold;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	cursor: pointer;
+
+	grid-area: total;
+
+}
+
+.totalname{
+	letter-spacing: 0.5rem;
+	font-size: 1.2rem;
+}
+
+.resultados{
+	width:85%;
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+}
+
+li{
+	margin-left: 1rem;
+	margin-right: 0.8rem;
+
+
+}
+
+
+button{
+	margin-top: 2.5rem;
+	height: 3rem;
+	width: 100%;
+
+	text-shadow: 0.2rem 0.2rem 0.3rem rgba(0,0,0,0.4);;
+	background-color: rgba(215, 114, 242, 1);
+	box-shadow: 
+			inset -0.4rem -0.4rem  0.5rem rgba(96, 15, 117, 0.5),
+			inset 0.4rem 0.4rem  0.5rem  rgba(247, 227, 252, 0.5),
+			-0.2rem -0.2rem 0.5rem  rgba(247, 227, 252, 0.5),
+			0.2rem 0.2rem 0.5rem  rgba(96, 15, 117, 0.5) ;
+
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.2rem;
+	font-stretch: semi-expanded;
+	font-weight: bold;
+	
+	color: #ABF7E7;
+	letter-spacing: 0.5rem;
+	
+
+	border-radius: 0.3rem;
+	border: 0;
+	
+	grid-area: boton;
+	place-self: stretch;
+
+	transition: 120ms ease-out;
+	cursor: pointer;
+
+
+}
+button:hover {
+		box-shadow: 
+		inset -0.4rem -0.4rem  0.5rem rgba(96, 15, 117, 0.5),
+			inset 0.4rem 0.4rem  0.5rem  rgba(247, 227, 252, 0.5),
+			-0.2rem -0.2rem 0.5rem  rgba(0, 0, 0, 0.3),
+			0.2rem 0.2rem 0.5rem  rgba(255,255,255, 0.5) ;
+
+		
+		transform: translateY(0.05rem);
+}
+
+button:active, button:focus {
+		box-shadow: 
+			
+			inset -0.2rem -0.2rem 0.3rem  rgba(143, 22, 175,0.5),
+			inset 0.2rem 0.2rem 0.3rem  rgba(143, 22, 175,0.5),
+			-0.2rem -0.2rem 0.5rem  rgba(207, 86, 239, 0.5),
+			0.2rem 0.2rem 0.5rem  rgba(207, 86, 239, 0.5);
+		
+		outline: none;
+		background-color: rgba(215, 114, 242, 0.7);
+		text-shadow: none;
+
+		
+		transform: scale(0.95);
+}
+
+
+
+
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+@media screen and (max-width: 800px) {
+
+  .fibra {
+  	width: 10%;
+  }
+}

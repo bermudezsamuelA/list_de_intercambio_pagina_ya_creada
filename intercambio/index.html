@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./public/styles.css" /> 
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+<div id="app">
+	<h2 class="titulo">Lista de Intercambio</h2>
+	<table>
+		<caption> Tabla de calculo de Dietas </caption>
+		<thead>
+			<tr class="titulos">
+				<th > {{ titulos.Name }} </th>
+				<th> {{ titulos.protein }} </th>
+				<th> {{ titulos.Grasas_T }} </th>
+				<th> {{ titulos.Grasas_S }} </th>
+				<th> {{ titulos.Grasas_M }} </th>
+				<th> {{ titulos.Grasas_P }} </th>
+				<th> {{ titulos.Colesterol }} </th>
+				<th> {{ titulos.CHO }} </th>
+				<th> {{ titulos.Na }} </th>
+				<th class="fibra"> {{ titulos.Fibra }} </th>
+				<th> {{ titulos.Unidad }} </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for='Team in teams' v-bind:key='Team.id' class="contenido">
+				<td class="name"> {{ Team.Name }} </td>
+				<td> {{ Team.protein }} </td>
+				<td> {{ Team.Grasas_T }} </td>
+				<td> {{ Team.Grasas_S }} </td>
+				<td> {{ Team.Grasas_M }} </td>
+				<td> {{ Team.Grasas_P }} </td>
+				<td> {{ Team.Colesterol }} </td>
+				<td> {{ Team.CHO }} </td>
+				<td> {{ Team.Na }} </td>
+				<td class="fibra"> {{ Team.Fibra }} </td>
+				<td> <input type="number" min="0" v-bind:placeholder="Team.Unidad" v-on:input='Multi(Team.id, $event.target.value )'> </td>
+			</tr>
+			
+	        
+		</tbody>
+	</table>
+	<boton-total v-bind:teams='teams' class="total" ></boton-total>
+	<button v-on:click="resetTeams()" >
+	    RESETEAR
+	</button>
+</div>
+
+
+
+
+<script src="https://unpkg.com/vue"></script>
+<script src="./scripts/seed.js"></script>
+<script src="./scripts/main.js"></script>
+</body>
+</html>
